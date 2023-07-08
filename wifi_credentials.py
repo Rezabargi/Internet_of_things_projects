@@ -1,2 +1,2 @@
-ssid = "Rezadev"
-password = "12345678"
+ssid = "enter your wifi name"
+password = "enter your wifi password"
