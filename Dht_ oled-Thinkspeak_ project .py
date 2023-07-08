@@ -6,8 +6,8 @@ import dht
 import time 
 import ssd1306
 
-ssid = "Enter your SSID"
-password = "Enter your password"
+ssid = "wifi name"
+password = "wifi password"
 
 # Create objects:
 led = Pin(18, Pin.OUT) 
@@ -28,8 +28,8 @@ print('network config:', sta.ifconfig())
 
 # Constants and variables:
 HTTP_HEADERS = {'Content-Type': 'application/json'} 
-THINGSPEAK_WRITE_API_KEY = 'Enter your api from Think speak' 
-UPDATE_TIME_INTERVAL = 5000  # in ms 
+THINGSPEAK_WRITE_API_KEY = 'enter your api from thing speak' 
+UPDATE_TIME_INTERVAL = 15000  # in ms 
 last_update = time.ticks_ms() 
 
 # Main loop:
@@ -41,8 +41,8 @@ while True:
         
         # Show DHT data on OLED display:
         oled.fill(0)
-        oled.text("Temp: {:.1f} C".format(t), 3, 10)
-        oled.text("Hum: {:.1f} %".format(h), 3, 45)
+        oled.text("Temp: {} C".format(t), 3, 10)
+        oled.text("Hum: {} %".format(h), 3, 45)
         oled.show()
         oled.invert(1)
          
@@ -57,3 +57,4 @@ while True:
          
         led.value(not led.value()) 
         last_update = time.ticks_ms()
+
